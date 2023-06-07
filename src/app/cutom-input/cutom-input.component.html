@@ -1,0 +1,12 @@
+<div class="container-search" id="categorySelect">
+    <input (clickOutside)="closePreview()" (clickInside)="openPreview()" type="text" placeholder={{placeholder}}  [formControl]="searchControl" (input)="onSearch($event)" >
+    <ng-container *ngIf="displayList">
+      <div class="search-preview">
+        <ul>
+          <ng-container *ngFor="let result of items! | filter: searchControl.value">
+            <li [highlight]="[result.name, searchControl.value]" (click)="onSelected(result)"></li>
+          </ng-container>
+        </ul>
+      </div>
+    </ng-container>
+</div>

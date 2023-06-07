@@ -1,0 +1,9 @@
+<p [innerHTML]="question.question"></p>
+<div>
+  <button (click)="buttonClicked(answer)"
+          [class]="getButtonClass(answer)"
+          *ngFor="let answer of question.all_answers"
+          [innerHTML]="answer">
+  </button>
+  <button *ngIf="haveChangeQuestion" [disabled]="loadChangeQuestion" class="dark" (click)="clickChangeQuestion(question.question)"> {{loadChangeQuestion ? 'Please wait ...' : 'Change question'}} </button>
+</div>

@@ -1,0 +1,31 @@
+.container-search {
+    display: inline;
+    position: relative;
+}
+
+.search-preview {
+    position: absolute;
+    top: 31px;
+    left: 4px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 205px;
+  }
+  
+  .search-preview ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .search-preview li {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .search-preview li:hover {
+    background-color: #f0f0f0;
+  }
