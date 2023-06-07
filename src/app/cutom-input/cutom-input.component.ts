@@ -33,7 +33,6 @@ export class CutomInputComponent {
 
   closePreview() {
     this.displayList = false
-    // this.searchControl.setValue("")
   }
 
 }

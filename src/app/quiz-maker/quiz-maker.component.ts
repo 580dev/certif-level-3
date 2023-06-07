@@ -31,8 +31,7 @@ export class QuizMakerComponent implements OnDestroy{
       next : (categories: Category[]) => {
         this.categories = categories
         this.mainCategories = this.categories.filter(category => !category.isSubCategory)
-      },
-      error: () => console.error
+      }
     })
   }
 
