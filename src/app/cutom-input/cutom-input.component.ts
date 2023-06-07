@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { HighlightDirective } from '../directive/highlight/highlight.directive'
 
 @Component({
   selector: 'app-cutom-input',

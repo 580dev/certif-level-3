@@ -27,6 +27,11 @@ export interface Results {
   score: number;
 }
 
+export interface highlighInterface {
+  textToHighlight: string,
+  searchText: string
+}
+
 export type Difficulty = "Easy" | "Medium" | "Hard";
 export type TypeCategory = "Entertainment" | "Science";
 

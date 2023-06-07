@@ -1,36 +1,30 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
-import {CategoriesName, Category, Difficulty, Question} from '../data.models';
-import {Observable, Subscription, combineLatest, filter, map, partition, tap, of} from 'rxjs';
+import {Component, OnDestroy} from '@angular/core';
+import {Category, Difficulty, Question} from '../data.models';
+import {Subscription} from 'rxjs';
 import {QuizService} from '../quiz.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-quiz-maker',
   templateUrl: './quiz-maker.component.html',
   styleUrls: ['./quiz-maker.component.css']
 })
-export class QuizMakerComponent implements OnInit, OnDestroy{
+export class QuizMakerComponent implements OnDestroy{
 
   categories!: Category[];
-  mainCategoryName: string | undefined
   subCategories: Category[] | undefined;
   mainCategories!: Category[];
   categorySelected: Category | undefined;
   categoriesSubscription!: Subscription
   questionsSubscription: Subscription | undefined
-  newQuestionsSubscription:  Subscription | undefined
+  newQuestionsSubscription: Subscription | undefined
   questions!: Question[];
   difficulty!: Difficulty
   haveChangeQuestion: boolean = true
   loading: boolean = false
 
-  searchControl = new FormControl();
-
-  constructor(protected quizService: QuizService, private formBuilder: FormBuilder) { 
+  constructor(protected quizService: QuizService) { 
     this.getMainCategories()
   }
-
-  ngOnInit(): void {}
 
   getMainCategories() {
     this.categoriesSubscription = this.quizService.getAllCategories().subscribe({

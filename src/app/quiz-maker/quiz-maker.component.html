@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-sm-11">
      
-    <app-cutom-input [items]="mainCategories" placeholder="Rechercher une category" (selectedChanges)="selectedCategory($event)"></app-cutom-input>
+    <app-cutom-input [items]="mainCategories" placeholder="Search a category" (selectedChanges)="selectedCategory($event)"></app-cutom-input>
 
     <ng-container *ngIf="subCategories">
-      <app-cutom-input [items]="subCategories" placeholder="Rechercher une sous category" (selectedChanges)="selectedSubCategory($event)"></app-cutom-input>
+      <app-cutom-input [items]="subCategories" placeholder="Search a sub-category" (selectedChanges)="selectedSubCategory($event)"></app-cutom-input>
     </ng-container>
 
     <select [(ngModel)]="difficulty" id="difficultySelect">
